@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+<div class="category-page">
+
+  <a class='home-link' href="{{ "/" | relative_url }}" title="Back to home">← Back to home</a>
+
+  {% assign category = page.tag %}
+  {% assign posts = site.categories[category] %}
+  <h1>Filed Under #<a href={{ "category/" | append: page.tag | relative_url }}, title="{{ page.tag }}">{{ page.tag }}</a> ({{ posts | size }} posts)</h1>
+
+  <ul>
+  {% for post in posts %}
+    <li>
+      <a href="{{ post.url }}" title="{{ post.title }}">[{{ post.date | date: "%Y-%m-%d" }}] {{ post.title }}</a>
+    </li>
+  {% endfor %}
+  </ul>
+
+  <hr />
+
+  <a class='home-link' href="{{ "/" | relative_url }}" title="Back to home">← Back to home</a>
+
+</div>

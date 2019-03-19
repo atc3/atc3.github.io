@@ -1,0 +1,29 @@
+---
+layout: default
+title: Categories
+permalink: /category/
+---
+
+<div class='category-landing'>
+
+  <a class='home-link' href="{{ "/" | relative_url }}" title="Back to home">← Back to home</a>
+
+  <h1>Categories</h1>
+
+  <hr />
+
+  <ul class='category-list'>
+    {% for category in site.categories %}
+    <li>
+      {% assign category_name = category | first %}
+      {% assign posts = category | last %}
+      <a href="{{ "category/" | append: category_name | relative_url }}", title="All posts under {{ category_name }}">{{ category_name }} ({{ posts | size }} posts)</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+  <hr />
+
+  <a class='home-link' href="{{ "/" | relative_url }}" title="Back to home">← Back to home</a>
+
+</div>

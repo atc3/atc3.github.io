@@ -1,0 +1,381 @@
+@charset "utf-8";
+
+@mixin bertlink {
+  color: #0000EE;
+
+  &:hover {
+    background-color: #0000EE;
+    color: #FFFFFF;
+  }
+}
+
+@mixin dashhr {
+  border: dashed 1px rgba(0,0,0,0.3);
+}
+
+a, a:visited {
+  @include bertlink();
+  text-decoration: underline;
+}
+
+p {
+  line-height: normal;
+}
+
+.site-header {
+  border-top: none;
+  border-bottom: none;
+
+  .wrapper {
+    max-width: -webkit-calc(800px - (30px * 2));
+    max-width: calc(800px - (30px * 2));
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+
+    font-size: 0.8em;
+
+    .site-title {
+      @include bertlink();
+      float: none;
+      line-height: inherit;
+      letter-spacing: 0px;
+    }
+    .profile-pic {
+      max-height: 40px;
+      margin-right: 10px;
+    }
+    .spacer {
+      flex: 1;
+    }
+    nav.site-nav {
+      a.page-link {
+        @include bertlink();
+        font-size: 1.3em;
+      }
+    }
+  }
+}
+
+main.page-content {
+  padding-top: 15px;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+  .left-col {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1.5;
+    margin-right: 10px;
+
+    .abstract {
+      p {
+        margin-bottom: 3px;
+      }
+
+      hr {
+        @include dashhr();
+        margin-top: 8px;
+        margin-bottom: 5px;
+      }
+
+      ul.abstract-links {
+        list-style: none;
+        list-style-type: none;
+        margin-left: 0px;
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        li {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    h3.projects-title {
+      font-size: 1.25em;
+      font-weight: 700;
+      margin-bottom: 0px;
+      margin-top: 5px;
+    }
+  }
+
+  .right-col {
+    /* display: flex; */
+    flex: 1;
+    flex-direction: row;
+    align-items: stretch;
+
+    .popout {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid black;
+
+      h3 {
+        margin-bottom: 2px;
+      }
+    }
+
+    .recent-posts {
+      h3 {
+        margin-top: 10px;
+      }
+
+      ul {
+        list-style-type: none;
+        margin-left: 0px;
+        margin-bottom: 5px;
+        font-size: 0.75em;
+
+        li {
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+}
+
+.projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-top: 10px;
+
+    a.project {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      position: relative;
+      border: 1px solid #000;
+      padding: 5px;
+      transition: 0.15s all ease-in-out;
+      margin-bottom: 10px;
+      text-decoration: none;
+
+      .image {
+        width: 100%;
+        height: 100%;
+        /*background-image: url(images/dart_banner.png);*/
+        background-size: contain;
+        background-position: -10px 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        transition: 0.15s all ease-in-out;
+      }
+      .image-cover {
+        width: 85%;
+        height: 100%;
+        background-color: white;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        transition: 0.15s all ease-in-out;
+        border-left: 1px solid #000;
+      }
+
+      .infobox {
+        margin-left: calc(15% + 10px);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        transition: none;
+        span.title {
+          text-decoration: underline;
+        }
+        span.desc {
+          color: $text-color;
+          text-decoration: none;
+          font-size: 0.85em;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(0,0,240,0.85);
+        .image-cover {
+          width: 0%;
+        }
+        .infobox {
+          span.desc {
+            color: #FFFFFF;
+          }
+        }
+      }
+
+    }
+
+  }
+}
+
+/* modify style for the projects panel on the projects page */
+.projects-page {
+  hr {
+    @include dashhr();
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .projects-wrapper {
+    width: 60%;
+    margin-bottom: 10px;
+  }
+}
+
+
+.tags-page {
+
+  h1 {
+    margin-top: 10px;
+  }
+
+  hr {
+    @include dashhr();
+    margin-bottom: 10px;
+  }
+
+  .tag-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    .tag-link {
+      margin-right: 10px;
+    }
+  }
+
+  a.tag-header {
+    font-size: 1.15em;
+  }
+  ul.tag-post-list {
+
+  }
+}
+
+
+/* /category/ page */
+.category-landing {
+
+  h1 {
+    margin-top: 10px;
+  }
+
+  hr {
+    @include dashhr();
+    margin-bottom: 10px;
+  }
+
+  ul {
+    li {
+      a {
+        font-size: 1.15em;
+      }
+    }
+  }
+
+  a.home-link {
+  }
+}
+
+/* individual category pages */
+.category-page {
+  h1 {
+    margin-top: 10px;
+  }
+
+  hr {
+    @include dashhr();
+    margin-bottom: 10px;
+  }
+
+  a.home-link {
+  }
+}
+
+
+/* post template */
+article.post {
+
+  header.post-header {
+    margin-bottom: 15px;
+    margin-top: 10px;
+
+    p.post-meta {
+      margin-bottom: 3px;
+    }
+    time.dt-published {
+      font-size: 1.15em;
+    }
+    div.category-meta, div.tag-meta {
+      font-size: 0.9em;
+      span {
+        color: $grey-color;
+      }
+      a {
+      }
+    }
+  }
+
+  hr {
+    @include dashhr();
+    margin-bottom: 10px;
+  }
+
+  .post-content {
+    margin-top: 20px;
+  }
+
+  h3.related-posts-title {
+    margin-bottom: 5px;
+  }
+  .related-posts {
+    margin-bottom: 10px;
+  }
+
+  a.home-link {
+  }
+}
+
+
+/* project page */
+
+.project-page {
+
+  hr {
+    @include dashhr();
+    margin-bottom: 10px;
+  }
+
+  a.home-link {
+  }
+
+}
+
+

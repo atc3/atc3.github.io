@@ -1,0 +1,52 @@
+---
+layout: default
+# thanks to https://www.jokecamp.com/blog/listing-jekyll-posts-by-tag/
+---
+
+<div class='tags-page'>
+
+  {% assign sorted_tags = site.tags | sort %}
+
+  <a class='home-link' href="{{ "/" | relative_url }}" title="Back to home">← Back to home</a>
+
+  <h1>Posts by tags</h1>
+
+  <hr />
+
+  <div class="tag-links">
+  {% for tag in sorted_tags %}
+    {% assign t = tag | first %}
+    {% assign posts = tag | last %}
+    <div class='tag-link'>
+      <a href="{{ "tags/#" | append: t | downcase | relative_url }}">{{ t | downcase }}</a>
+      ({{ posts | size }})
+    </div>
+  {% endfor %}
+  </div>
+
+  <hr />
+  <br />
+
+  {% for tag in sorted_tags %}
+    {% assign t = tag | first %}
+    {% assign posts = tag | last %}
+
+  <a name="{{ t | downcase }}"</a>
+  <a class='tag-header' href="{{ "tags/#" | append: t | downcase | relative_url }}">{{ t | downcase }} ({{ posts | size }} posts)</a>
+  <ul class='tag-post-list'>
+  {% for post in posts %}
+    {% if post.tags contains t %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
+    </li>
+    {% endif %}
+  {% endfor %}
+  </ul>
+  {% endfor %}
+
+  <hr />
+
+  <a class='home-link' href="{{ "/" | relative_url }}" title="Back to home">← Back to home</a>
+
+</div>

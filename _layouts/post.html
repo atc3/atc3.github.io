@@ -1,0 +1,74 @@
+---
+layout: default
+---
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <a class='home-link' href="{{ "/" | relative_url }}" title="Back to home">← Back to home</a>
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        Published: {{ page.date | date: "%Y-%m-%d" }}
+      </time>
+      {%- if page.author -%}
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.author }}</span></span>
+      {%- endif -%}
+    </p>
+    <div class='category-meta'>
+      <span>Category:</span>
+      {% assign sorted_categories = page.categories | sort %}
+      {% for category in sorted_categories %}
+        <a href="{{"/category/" | append: category | relative_url }}" title="All {{ category }} posts">{{ category }}</a>
+        {% unless forloop.last %},&nbsp;{% endunless %}
+      {% endfor %}
+    </div>
+    <div class='tag-meta'>
+      <span>Tags:</span>
+      {% assign sorted_tags = page.tags | sort %}
+      {% for tag in sorted_tags %}
+        <a href="{{"/tags#" | append: category | relative_url }}" title="All posts tagged #{{ tag }}">#{{ tag }}</a>{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    </div>
+  </header>
+
+  <hr />
+
+  <div class="post-content e-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <hr />
+
+  <a name="related-posts"></a>
+  <h3 class='related-posts-title'>Related Posts</h3>
+  <div class='related-posts'>
+    {% assign firstCategory = page.categories | first %}
+    <ul>
+    {% assign relatedCount = 0 %}
+    {% for related in site.categories[firstCategory] %}
+      {% unless page.title == related.title %}
+      {% assign relatedCount = relatedCount | plus: 1 %}
+      <li>
+        <a href="{{related.permalink}}" title="{{ related.title }}">[{{ related.date | date: "%Y-%m-%d" }}] {{ related.title }}</a>
+      </li>
+      {% endunless %}
+
+      {% if relatedCount == 3 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    </ul>
+  </div>
+
+  <hr />
+
+  <a class='home-link' href="{{ "/" | relative_url }}" title="Back to home">← Back to home</a>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+  {%- endif -%}
+
+  <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+</article>
