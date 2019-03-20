@@ -13,6 +13,10 @@
   border: dashed 1px rgba(0,0,0,0.3);
 }
 
+@mixin serif {
+  font: 400 16px/1.5 "Helvetica Neue", "Arial", sans-serif;
+}
+
 a, a:visited {
   @include bertlink();
   text-decoration: underline;
@@ -50,10 +54,18 @@ p {
     .spacer {
       flex: 1;
     }
+
     nav.site-nav {
       a.page-link {
+
         @include bertlink();
         font-size: 1.3em;
+
+        img {
+          margin-right: 3px;
+          padding-bottom: 2px;
+        }
+
       }
     }
   }
@@ -64,41 +76,59 @@ main.page-content {
 }
 
 .home {
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: flex-start;
+
+  .abstract {
+    p {
+      margin-bottom: 3px;
+    }
+
+    ul.abstract-links {
+      list-style: none;
+      list-style-type: none;
+      margin-left: 0px;
+      margin-bottom: 0px;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      li {
+        margin-right: 10px;
+        a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          img {
+            margin-right: 3px;
+          }
+        }
+      }
+    }
+
+    hr {
+      @include dashhr();
+      margin-top: 8px;
+      margin-bottom: 5px;
+    }
+
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .left-col {
+    flex-grow: 1.5;
+    flex-basis: 0;
+    max-width: 100%;
+
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    flex: 1.5;
     margin-right: 10px;
 
-    .abstract {
-      p {
-        margin-bottom: 3px;
-      }
-
-      hr {
-        @include dashhr();
-        margin-top: 8px;
-        margin-bottom: 5px;
-      }
-
-      ul.abstract-links {
-        list-style: none;
-        list-style-type: none;
-        margin-left: 0px;
-        margin-bottom: 0px;
-        display: flex;
-        flex-direction: row;
-        align-items: flex-start;
-        flex-wrap: wrap;
-        li {
-          margin-right: 10px;
-        }
-      }
+    @include media-query($on-palm) {
+      width: 100%;
     }
 
     h3.projects-title {
@@ -110,10 +140,17 @@ main.page-content {
   }
 
   .right-col {
-    /* display: flex; */
-    flex: 1;
+    /* display: flex; 
     flex-direction: row;
-    align-items: stretch;
+    align-items: stretch; */
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+    padding-top: calc(29px + 1em);
+
+    @include media-query($on-palm) {
+      width: 100%;
+    }
 
     .popout {
       width: 100%;
@@ -350,6 +387,7 @@ article.post {
 
   .post-content {
     margin-top: 20px;
+    @include serif();
   }
 
   h3.related-posts-title {
@@ -368,9 +406,19 @@ article.post {
 
 .project-page {
 
+
+
+  h1 {
+    margin-top: 10px;
+  }
+
   hr {
     @include dashhr();
     margin-bottom: 10px;
+  }
+
+  .project-content {
+    @include serif();
   }
 
   a.home-link {

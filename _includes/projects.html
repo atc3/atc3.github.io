@@ -2,32 +2,17 @@
 
   <div class='project-list'>
 
-    <a class='project' href='{{ "/projects/scope-extensions" | relative_url }}' title="SCOPE-MS Extensions">
-      <div class='image' style='background-image:url("/images/scopeext_banner.gif")'></div>
+    {%- assign sorted_projects = site.projects | sort: 'number' -%}
+    {%- for project in sorted_projects -%}
+    <a class='project' href='{{ project.id | relative_url }}' title="{{ project.title }}">
+      <div class='image' style='background-image:url("{{ project.banner_img }}")'></div>
       <div class='image-cover'></div>
       <div class='infobox'>
-      <span class='title'>[Slavov Lab] SCOPE-MS Extensions</span>
-      <span class='desc'>[[ Under Development ]] ... Stay tuned!</span>
+        <span class='title'>{{ project.box_title }}</span>
+        <span class='desc'>{{ project.box_desc }}</span>
       </div>
     </a>
-
-    <a class='project' href='{{ "/projects/dart-id" | relative_url }}' title="DART-ID Project">
-      <div class='image' style='background-image:url("/images/dart_banner.png")'></div>
-      <div class='image-cover'></div>
-      <div class='infobox'>
-      <span class='title'>[Slavov Lab] DART-ID</span>
-      <span class='desc'>Increasing proteome coverage of LC-MS/MS runs with retention time alignment</span>
-      </div>
-    </a>
-
-    <a class='project' href='{{ "/projects/do-ms" | relative_url }}' title="DO-MS Project">
-      <div class='image' style='background-image:url("/images/doms_banner.png")'></div>
-      <div class='image-cover'></div>
-      <div class='infobox'>
-      <span class='title'>[Slavov Lab] DO-MS</span>
-      <span class='desc'>Extensible, modular visualization and optimization of mass-spec data</span>
-      </div>
-    </a>
+    {%- endfor -%}
 
     <a class='project' href='{{ "/projects/miser" | relative_url }}' title="Waters Corp - MISER">
       <div class='image' style='background-image:url("/images/miser_banner.png")'></div>

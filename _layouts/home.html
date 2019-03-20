@@ -25,53 +25,58 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
 
-  <div class='left-col'>
-    <div class='abstract'>
-      <p>WELCOME TO MY PORTFOLIO / BLOG<br/>
-      PLEASE ENJOY YOUR STAY</p>
-      <p>Currently at: <a href="https://web.northeastern.edu/slavovlab" target="_blank" title="Slavov Lab Web Page">Slavov Laboratory</a>, <a href="https://northeastern.edu" target="_blank" title="Northeastern University Web Page">Northeastern University</a>, Boston MA</p>
-      <hr />
-      <ul class='abstract-links'>
-        <li><a href="https://site.halfgrain.com/resume.pdf" target="_blank">RESUME</a></li>
-        <li><a href="https://github.com/blahoink" target="_blank">GITHUB</a></li>
-        <li><a href="mailto:blahoink@gmail.com" target="_blank">E-MAIL</a></li>
-        <li><a href="https://twitter.com/atchen_" target="_blank">TWITTER</a></li>
-        <li><a href="https://www.linkedin.com/in/achen339" target="_blank">LINKED_IN</a></li>
-        <li><a href="https://open.spotify.com/user/blahoink/playlist/0vao5qwBJCC26D1WCja6XX?si=XoguvV9rR_qaS4-5EdWJUg" target="_blank">🔊PLAYLIST</a></li>
-      </ul>
-      <hr />
-    </div>
-
-    <h3 class='projects-title'>Projects</h3>
-
-    {%- include projects.html -%}
-    
+  <div class='abstract'>
+    <p>WELCOME TO MY PORTFOLIO / BLOG<br/>
+    PLEASE ENJOY YOUR STAY</p>
+    <p>Currently at: <a href="https://web.northeastern.edu/slavovlab" target="_blank" title="Slavov Lab Web Page">Slavov Laboratory</a>, <a href="https://northeastern.edu" target="_blank" title="Northeastern University Web Page">Northeastern University</a>, Boston MA</p>
+    <hr />
+    <ul class='abstract-links'>
+      <li><a href="{{ "/assets/resume-albert-chen.pdf" | relative_url }}" target="_blank">RESUME</a></li>
+      <li><a href="https://github.com/blahoink" target="_blank">GITHUB</a></li>
+      <li><a href="mailto:blahoink@gmail.com" target="_blank">E-MAIL</a></li>
+      <li><a href="https://twitter.com/atchen_" target="_blank">TWITTER</a></li>
+      <li><a href="https://www.linkedin.com/in/achen339" target="_blank">LINKED_IN</a></li>
+      <li><a href="https://open.spotify.com/user/blahoink/playlist/0vao5qwBJCC26D1WCja6XX?si=XoguvV9rR_qaS4-5EdWJUg" target="_blank">🔊PLAYLIST</a></li>
+      <li><a href="https://orcid.org/0000-0002-5387-0208" target="_blank" title="ORCID Profile">
+      <img src="/images/orcid_16x16.png" width=16 height=16>ORCID
+      </a></li>
+    </ul>
+    <hr />
   </div>
 
-  <div class='right-col'>
-    <div class='popout'>
-      <div class='categories'>
-        <h3>Categories</h3>
-        {% for category in site.categories %}
-        {% assign category_name = category | first %}
-        <a href="{{ "category/" | append: category_name | relative_url }}", title="All posts under {{ category_name }}">{{ category_name }}</a>
-        {% endfor %}
-      </div>
-      <div class='recent-posts'>
-        <h3>Recent Posts</h3>
-        <ul>
-        {% for post in site.posts limit:10 %}
-          <li>
-            <a href="{{ post.url }}" title="{{ post.title }}">[{{ post.date | date: "%Y-%m-%d" }}] {{ post.title }}</a>
-          </li>
-        {% endfor %}
-        </ul>
+  <div class='row'>
+
+    <div class='left-col'>
+
+      <h3 class='projects-title'>Projects</h3>
+
+      {%- include projects.html -%}
+      
+    </div>
+
+    <div class='right-col'>
+      <div class='popout'>
+        <div class='categories'>
+          <h3>Categories</h3>
+          {% for category in site.categories %}
+          {% assign category_name = category | first %}
+          <a href="{{ "category/" | append: category_name | relative_url }}", title="All posts under {{ category_name }}">{{ category_name }}</a>
+          {% endfor %}
+        </div>
+        <div class='recent-posts'>
+          <h3>Recent Posts</h3>
+          <ul>
+          {% for post in site.posts limit:10 %}
+            <li>
+              <a href="{{ post.url }}" title="{{ post.title }}">[{{ post.date | date: "%Y-%m-%d" }}] {{ post.title }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
       </div>
     </div>
+
   </div>
 
 
