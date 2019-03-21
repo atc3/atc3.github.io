@@ -4,7 +4,7 @@ title: DART-ID
 id: dart-id
 permalink: "/projects/dart-id"
 banner_img: "/images/dart_banner.png"
-title: "DART-ID"
+title: "DART-ID Increases Single Cell Proteome Coverage"
 box_title: "[Slavov Lab] DART-ID"
 box_desc: "Increasing proteome coverage of LC-MS/MS runs with retention time alignment"
 ---
@@ -17,7 +17,7 @@ DART-ID is a computational method which can increase the coverage of LC-MS/MS pr
 
 The paper is currently under review at [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/). 
 
-In addition to [the accompanying posters](/design/2018/11/22/dart-id-posters), [this Twitter thread](https://twitter.com/atchen_/status/1102871543389016064) is a good introduction to the project:
+In addition to [the accompanying posters](/design/2018/11/23/dart-id-posters), [this Twitter thread](https://twitter.com/atchen_/status/1102871543389016064) is a good introduction to the project:
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Welcome to my twitter poster! DART-ID leverages retention time reproducibility to increase proteome coverage in LC-MS/MS experiments. Feel free to comment/ask questions<br><br>Special thanks to <a href="https://twitter.com/slavovLab?ref_src=twsrc%5Etfw">@slavovLab</a> <a href="https://twitter.com/afranks53?ref_src=twsrc%5Etfw">@afranks53</a> <a href="https://twitter.com/NUBioE1?ref_src=twsrc%5Etfw">@NUBioE1</a> <a href="https://twitter.com/hashtag/RSCPoster?src=hash&amp;ref_src=twsrc%5Etfw">#RSCPoster</a> <a href="https://twitter.com/hashtag/RSCAnalytical?src=hash&amp;ref_src=twsrc%5Etfw">#RSCAnalytical</a> <a href="https://t.co/N0pOFxs7K1">pic.twitter.com/N0pOFxs7K1</a></p>&mdash; Albert Chen (@atchen_) <a href="https://twitter.com/atchen_/status/1102871543389016064?ref_src=twsrc%5Etfw">March 5, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 

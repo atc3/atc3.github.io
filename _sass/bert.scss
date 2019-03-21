@@ -63,7 +63,8 @@ p {
 
         img {
           margin-right: 3px;
-          padding-bottom: 2px;
+          margin-bottom: 2px;
+          margin-left: 3px;
         }
 
       }
@@ -98,6 +99,7 @@ main.page-content {
           flex-direction: row;
           align-items: center;
           img {
+            margin-left: 3px;
             margin-right: 3px;
           }
         }
