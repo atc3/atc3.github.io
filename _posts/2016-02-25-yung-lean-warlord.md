@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Yung Lean - Warlord
-date: '2016-02-25T16:48:03-05:00'
+date: '2016-02-25'
 categories:
 - art
 tags:

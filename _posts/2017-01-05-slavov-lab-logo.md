@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Slavov Lab logo design
-date: '2017-01-05T15:09:12-05:00'
+date: '2017-01-05'
 categories:
 - design
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TLOP animated cover
-date: '2016-02-21T04:18:29-05:00'
+date: '2016-02-21'
 categories:
 - art
 tags:

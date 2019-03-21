@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Portrait of HS teacher (pastels)
-date: '2015-11-18T02:50:41-05:00'
+date: '2015-11-18'
 categories:
 - art
 tags:

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: BWH IDEA Labs Logo Design
-date: '2015-11-18T03:29:33-05:00'
+date: '2015-11-18'
 categories:
 - design
 tags:

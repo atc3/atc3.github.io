@@ -1,7 +1,7 @@
 ---
 layout: post
 title: NEU iGEM 2017 Design
-date: '2017-12-29T20:02:37-05:00'
+date: '2017-12-29'
 categories:
 - design
 tags:

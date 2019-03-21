@@ -1,7 +1,7 @@
 ---
 layout: post
 title: doodle requests pt. 1
-date: '2015-11-18T03:18:00-05:00'
+date: '2015-11-18'
 categories:
 - art
 tags:

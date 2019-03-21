@@ -1,7 +1,7 @@
 ---
 layout: post
 title: YSV brand design
-date: '2015-11-18T03:26:45-05:00'
+date: '2015-11-18'
 categories:
 - design
 tags:

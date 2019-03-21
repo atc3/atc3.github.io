@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Easy Monday - Some Thoughts
-date: '2016-10-16T15:00:03-04:00'
+date: '2016-10-16'
 categories:
 - art
 tags:

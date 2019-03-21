@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Easy Monday - Cold Dark Dreaming
-date: '2017-02-16T13:17:24-05:00'
+date: '2017-02-16'
 categories:
 - art
 tags:

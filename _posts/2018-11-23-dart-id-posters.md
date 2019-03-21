@@ -1,7 +1,7 @@
 ---
 layout: post
 title: DART-ID Posters
-date: '2018-11-22T21:03:46-05:00'
+date: '2018-11-23'
 categories:
 - design
 tags:

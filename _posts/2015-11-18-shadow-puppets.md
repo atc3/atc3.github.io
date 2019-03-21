@@ -1,7 +1,7 @@
 ---
 layout: post
 title: shadow puppets
-date: '2015-11-18T02:51:04-05:00'
+date: '2015-11-18'
 categories:
 - art
 tags:

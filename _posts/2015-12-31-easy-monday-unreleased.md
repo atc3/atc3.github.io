@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Easy Monday Covers - Unreleased
-date: '2015-12-31T14:09:07-05:00'
+date: '2015-12-31'
 categories:
 - art
 tags:
