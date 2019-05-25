@@ -51,11 +51,11 @@ layout: default
       {% unless page.title == related.title %}
       {% assign relatedCount = relatedCount | plus: 1 %}
       <li>
-        <a href="{{related.permalink}}" title="{{ related.title }}">[{{ related.date | date: "%Y-%m-%d" }}] {{ related.title }}</a>
+        <a href="{{ related.url | relative_url }}" title="{{ related.title }}">[{{ related.date | date: "%Y-%m-%d" }}] {{ related.title }}</a>
       </li>
       {% endunless %}
 
-      {% if relatedCount == 3 %}
+      {% if relatedCount == 5 %}
         {% break %}
       {% endif %}
     {% endfor %}
