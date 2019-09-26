@@ -11,11 +11,14 @@ box_desc: "Extensible, modular visualization and optimization of mass-spec data"
 
  ![](/images/doms_preview.png)
 
-\[[MANUSCRIPT](https://www.biorxiv.org/content/10.1101/512152v1)\]
+ \[[WEBSITE/GUIDE](https://do-ms.slavovlab.net/)\]
+
+\[[JPR ARTICLE](https://doi.org/10.1021/acs.jproteome.9b00039)\]
+
+\[[PREPRINT](https://www.biorxiv.org/content/10.1101/512152v1)\]
 
 \[[DOWNLOAD FROM GITHUB](https://github.com/SlavovLab/DO-MS/releases)\]
 
-\[[READ THE GUIDE](https://github.com/SlavovLab/DO-MS/wiki/Getting-Started-(Application))\]
 
 DO-MS is a modular application for visualizing and optimizing your LC-MS/MS runs. It takes in the output from [MaxQuant](https://maxquant.org/) and allows you to interactively visualize it within the app. Combine multiple experiments, filter your data, and download individual plots or data.
 
@@ -31,7 +34,7 @@ Output created: ~/Downloads/SQC68_DO-MS_report.html
 
  ![](/images/doms_report_preview.png)
 
-DO-MS is [modular and customizable](https://github.com/SlavovLab/DO-MS/wiki/Building-Your-Own-Modules). Our lab uses an internal version with many other tabs/modules, and runs the tool every day as a quality control for our LC setup and Q-Exactive.
+DO-MS is [modular and customizable](https://do-ms.slavovlab.net/docs/build-your-own). Our lab uses an internal version with many other tabs/modules, and runs the tool every day as a quality control for our LC setup and Q-Exactive.
 
 ## Involvement
 
