@@ -14,7 +14,17 @@ tags:
 
 Check out my first first-author publication (preprint -- hopefully published soon) DART-ID!&nbsp;[https://www.biorxiv.org/content/early/2018/08/23/399121](https://www.biorxiv.org/content/early/2018/08/23/399121)
 
+
+Update - published in PLOS Computational Biology: [https://doi.org/10.1371/journal.pcbi.1007082](https://doi.org/10.1371/journal.pcbi.1007082)
+
+
 Newest posters first, older ones last
+
+### 2019-05-06 -- EB / ASBMB 2019
+
+Presented at the annual American Society for Biochemistry and Molecular Biology (ASBMB) meeting in 2019, as part of the [Experimental Biology (EB) conference](https://experimentalbiology.org/2019/home.aspx) in Orlando FL.
+
+ ![](/images/DART_poster_v6.png)
 
 ### 2019-03-15 -- RSC Twitter Poster
 
@@ -39,6 +49,6 @@ Presented at [ASBMB The Active Site Regional Meeting 2018](https://bccneu.weebly
 
 Presented at the [Single Cell Proteomics 2018](https://www.northeastern.edu/scp2018/) conference, hosted at Northeastern University
 
- ![](/tumblr_files/tumblr_pimj2aEwVJ1r8gweso1_1280.png)  
+ ![](/images/scp_poster_v6.png)
 
 

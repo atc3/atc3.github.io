@@ -9,13 +9,15 @@ box_title: "[Slavov Lab] DART-ID"
 box_desc: "Increasing proteome coverage of LC-MS/MS runs with retention time alignment"
 ---
 
+Website: [https://dart-id.slavovlab.net/](https://dart-id.slavovlab.net/)
+
 DART-ID is a computational method which can increase the coverage of LC-MS/MS proteomics experiments -- specifically those relying on MS2-based quantitation (i.e., isobaric tag labeling, TMT). It uses inferred and observed peptide retention time (RT) to update the peptide identification confidence, and usually results in up to 50% more peptides observed at 1% FDR.
 
+  - Published in PLOS Computational Biology: [https://doi.org/10.1371/journal.pcbi.1007082](https://doi.org/10.1371/journal.pcbi.1007082)
   - Read the preprint on BioRxiv: [https://www.biorxiv.org/content/10.1101/399121v2](https://www.biorxiv.org/content/10.1101/399121v2).
   - Check out the ```dart_id``` tool: [https://github.com/SlavovLab/DART-ID](https://github.com/SlavovLab/DART-ID)
   - Check out the scripts for analysis and figure generation: [https://github.com/SlavovLab/DART-ID_2018](https://github.com/SlavovLab/DART-ID_2018)
 
-The paper is currently under review at [PLOS Computational Biology](https://journals.plos.org/ploscompbiol/). 
 
 In addition to [the accompanying posters](/design/2018/11/23/dart-id-posters), [this Twitter thread](https://twitter.com/atchen_/status/1102871543389016064) is a good introduction to the project:
 
