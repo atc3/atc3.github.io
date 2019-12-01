@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class='all-posts-page'>
+
+    <h1>All posts</h1>
+
+    <hr />
+
+    <div class="tag-links">
+    {% for post in site.posts%}
+        <li>
+            <a href="{{ post.url }}" title="{{ post.title }}">[{{ post.date | date: "%Y-%m-%d" }}] {{ post.title }}</a>
+        </li>
+    {% endfor %}
+    </div>
+
+</div>
