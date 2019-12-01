@@ -104,6 +104,13 @@ main.page-content {
             margin-right: 3px;
           }
         }
+
+        a.playlist-link {
+          color: transparent;
+          &:hover, &:focus, &:active {
+            color: white;
+          }
+        }
       }
     }
 
