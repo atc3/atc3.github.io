@@ -76,7 +76,7 @@ To achieve this, we can:
 
 All we have to provide the MS with for targeted DDA is 1) the target m/z, 2) the retention time window, and 3) the target ion's charge. These are all fields that we can find from search results, such as from the evidence.txt output from a MaxQuant search. Reformatting your data is then as simple as a short script or copy/pasting columns in Excel.
 
-Our lab uses MaxQuant, but since many of our experiments are TMT-tagged, and since MaxQuant does not calculate masses and m/z correctly for TMT-labelled peptides, we have to calculate the mass on our own. I wrote a script to do this and a few other useful things, such as simple retention time alignment. You can find it here: [https://gist.github.com/blahoink/84c35bc900f746fa21a558e278efc67c](https://gist.github.com/blahoink/84c35bc900f746fa21a558e278efc67c)
+Our lab uses MaxQuant, but since many of our experiments are TMT-tagged, and since MaxQuant does not calculate masses and m/z correctly for TMT-labelled peptides, we have to calculate the mass on our own. I wrote a script to do this and a few other useful things, such as simple retention time alignment. You can find it here: [https://gist.github.com/atc3/84c35bc900f746fa21a558e278efc67c](https://gist.github.com/atc3/84c35bc900f746fa21a558e278efc67c)
 
 ## Running the Experiment
 

@@ -11,7 +11,7 @@ box_desc: "Feature-complete failed social network. Web, iOS and Android apps"
 
 **Feature-complete failed social network. For Web, iOS, and Android**
 
-\[[WEB + SERVER](https://github.com/blahoink/bevy)\]
+\[[WEB + SERVER](https://github.com/atc3/bevy)\]
 
 \[[MOBILE APPS](https://github.com/kevinaltschuler/bevy-mobile)\]
 
