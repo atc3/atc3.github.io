@@ -14,7 +14,7 @@ tags:
 </a>
 
 <br />
-[Zotero](https://www.zotero.org/) is a fantastic [non-profit](https://www.zotero.org/support/privacy), [open source](https://github.com/zotero) paper and reference manager with [a ton of cool features](https://www.zotero.org/why). I mostly use it to organize and annotate papers, but it can be used for a lot, lot more. 
+[Zotero](https://www.zotero.org/) is a fantastic [non-profit](https://www.zotero.org/support/privacy), [open source](https://github.com/zotero) paper and reference manager with [a ton of cool features](https://www.zotero.org/why). I mostly use it to organize and annotate papers, but it can be used for a lot, lot more! 
 
 While Zotero provides integrated library storage as part of the standalone application, I quickly overran the 300MB free tier, and didn't want to worry about data quotas when I was adding papers to my library. (Note, you can still [support Zotero in other ways](https://www.zotero.org/getinvolved/).) Instead of storing paper files with Zotero, you can easily connect Zotero with a cloud storage provider like [Google Drive](https://www.google.com/drive/), [Dropbox](https://www.dropbox.com/), [Box](https://www.box.com/home), [Sync](https://www.sync.com/) etc.
 
