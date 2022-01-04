@@ -19,9 +19,7 @@ layout: default
     <div class='category-meta'>
       <span>Category:</span>
       {% assign sorted_categories = page.categories | sort %}
-      {% for category in sorted_categories %}
-        <a href="{{"/category/" | append: category | relative_url }}" title="All {{ category }} posts">{{ category }}</a>
-        {% unless forloop.last %},&nbsp;{% endunless %}
+      {% for category in sorted_categories %}<a href="{{"/category/" | append: category | relative_url }}" title="All {{ category }} posts">{{ category }}</a>{% unless forloop.last %},{% endunless %}
       {% endfor %}
     </div>
     <div class='tag-meta'>
