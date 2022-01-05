@@ -11,6 +11,7 @@ tags:
   - python
   - matplotlib
   - jupyter
+  - data viz
 ---
 
 
@@ -36,6 +37,7 @@ Making this reference mostly for myself - hope others find these tricks useful
     - [Blended transforms](#blended-transforms)
     - [Point annotation](#point-annotation)
 - [Grids](#grids)
+- [Colorbars](#colorbars)
 
 ### Imports
 
@@ -43,7 +45,6 @@ Making this reference mostly for myself - hope others find these tricks useful
 ```python
 import pandas as pd
 import numpy as np
-import re
 
 import matplotlib as mpl
 import matplotlib.pyplot as plt
@@ -938,6 +939,111 @@ plt.show()
 
     
 <img src="/images/2022-01-04-plotting-matplotlib-reference_files/2022-01-04-plotting-matplotlib-reference_50_0.png">
+    
+
+
+## Colorbars
+
+I prefer to manually allocate space for colorbars instead of trusting matplotlib to create a sensible placement. This also gives you more direct control over the spacing and the axes (instead of having to rely on proxy functions on the created colorbar object).
+
+Instead of tuning `width_ratio` on `subplot()` or `gridspec()`, I create separate gridspecs for the plot and the colorbar, which let's me tune the spacing with the padding keyword arguments
+
+I first test this out by creating empty axes to see where things will land:
+
+
+```python
+x = norm.rvs(size=10_000)
+y = x + norm.rvs(0, 0.5, size=10_000)
+
+fig = plt.figure(figsize=(2.2, 2), dpi=150)
+gs = fig.add_gridspec(1, 1, right=0.9)
+
+# kernel = gaussian_kde(np.vstack([x, y]))
+# c = kernel(np.vstack([x, y]))
+
+ax = fig.add_subplot(gs[0, 0])
+# ax.scatter(x, y, s=1, c=c, cmap=mpl.cm.viridis, edgecolor='none')
+
+# Colorbar grid and axes
+gs_cbar = fig.add_gridspec(1, 1, left=0.92, right=0.95)
+ax = fig.add_subplot(gs_cbar[0, 0])
+
+plt.show()
+```
+
+
+    
+<img src="/images/2022-01-04-plotting-matplotlib-reference_files/2022-01-04-plotting-matplotlib-reference_52_0.png">
+    
+
+
+Then I fill in, and pass the scatterplot object to the colorbar as a mappable.
+
+I try to avoid sideways text wherever possible, and to instead place the colorbar label on top and offset of the colorbar for easier reading
+
+
+```python
+x = norm.rvs(size=10_000)
+y = x + norm.rvs(0, 0.5, size=10_000)
+
+fig = plt.figure(figsize=(2.2, 2), dpi=150)
+gs = fig.add_gridspec(1, 1, right=0.9)
+
+kernel = gaussian_kde(np.vstack([x, y]))
+c = kernel(np.vstack([x, y]))
+
+ax = fig.add_subplot(gs[0, 0])
+scatter = ax.scatter(x, y, s=1, c=c, cmap=mpl.cm.viridis, edgecolor='none')
+
+# Colorbar grid and axes
+gs_cbar = fig.add_gridspec(1, 1, left=0.92, right=0.95)
+ax = fig.add_subplot(gs_cbar[0, 0])
+fig.colorbar(scatter, cax=ax)
+ax.text(1, 1.01, 'Density', transform=ax.transAxes, ha='right', va='bottom')
+
+plt.show()
+```
+
+
+    
+<img src="/images/2022-01-04-plotting-matplotlib-reference_files/2022-01-04-plotting-matplotlib-reference_54_0.png">
+    
+
+
+If you have multiple panels, or multiple `mappables` to pass to colorbar, it's simple to define the mapping yourself. Just remember that if you set `vmin` and `vmax` manually on the colorbar, to also enforce the same limits on your other plots as well.
+
+
+```python
+x = norm.rvs(size=10_000)
+y = x + norm.rvs(0, 0.5, size=10_000)
+
+fig = plt.figure(figsize=(2.2, 2), dpi=150)
+gs = fig.add_gridspec(1, 1, right=0.9)
+
+kernel = gaussian_kde(np.vstack([x, y]))
+c = kernel(np.vstack([x, y]))
+
+ax = fig.add_subplot(gs[0, 0])
+scatter = ax.scatter(x, y, s=1, c=c, vmin=0, vmax=0.3, cmap=mpl.cm.viridis, edgecolor='none')
+
+# Colorbar grid and axes
+gs_cbar = fig.add_gridspec(1, 1, left=0.92, right=0.95)
+ax = fig.add_subplot(gs_cbar[0, 0])
+fig.colorbar(
+    mpl.cm.ScalarMappable(
+        norm=mpl.colors.Normalize(vmin=0, vmax=0.3), 
+        cmap=mpl.cm.viridis
+    ), 
+    cax=ax
+)
+ax.text(1, 1.01, 'Density', transform=ax.transAxes, ha='right', va='bottom')
+
+plt.show()
+```
+
+
+    
+<img src="/images/2022-01-04-plotting-matplotlib-reference_files/2022-01-04-plotting-matplotlib-reference_56_0.png">
     
 
 
