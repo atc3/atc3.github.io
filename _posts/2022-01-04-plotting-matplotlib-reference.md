@@ -6,6 +6,7 @@ date: '2022-01-04'
 categories:
   - research
   - code
+  - data-viz
 tags:
   - guide
   - python
