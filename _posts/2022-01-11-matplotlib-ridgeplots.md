@@ -232,8 +232,3 @@ plt.show()
 <img src="/images/2022-01-11-matplotlib-ridgeplots_files/2022-01-11-matplotlib-ridgeplots_5_0.png">
     
 
-
-
-```python
-
-```
